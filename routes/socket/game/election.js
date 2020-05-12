@@ -1331,7 +1331,7 @@ module.exports.selectVoting = (passport, game, data, socket, force = false) => {
 			});
 		}
 
-		if (gameState.undrawnPolicyCount < 3) {
+		if (gameState.undrawnPolicyCount < 4) {
 			shufflePolicies(game);
 		}
 
