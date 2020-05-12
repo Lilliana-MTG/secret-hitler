@@ -101,7 +101,7 @@ module.exports.startElection = (game, specialElectionPresidentIndex) => {
 		game.gameState.isVetoEnabled = true;
 	}
 
-	if (game.gameState.undrawnPolicyCount < 3) {
+	if (game.gameState.undrawnPolicyCount < 4) {
 		shufflePolicies(game);
 	}
 
@@ -162,7 +162,7 @@ module.exports.startElection = (game, specialElectionPresidentIndex) => {
 				seatedPlayers[index] &&
 				!seatedPlayers[index].isDead &&
 				index !== presidentIndex &&
-				(game.general.livingPlayerCount > 5 ? !previousElectedGovernment.includes(index) : previousElectedGovernment[1] !== index)
+				(game.general.livingPlayerCount > 6 ? !previousElectedGovernment.includes(index) : previousElectedGovernment[1] !== index)
 		)
 		.forEach(player => {
 			player.notificationStatus = 'notification';
